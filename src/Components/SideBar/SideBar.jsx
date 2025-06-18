@@ -23,6 +23,8 @@ import MapOutlinedIcon from '@mui/icons-material/MapOutlined';
 import { Avatar, Typography } from '@mui/material';
 import img from "../../assets/image.png"
 import { useLocation, useNavigate } from 'react-router-dom';
+import { grey } from '@mui/material/colors';
+
 
 const drawerWidth = 240;
 
@@ -134,7 +136,7 @@ export default function SideBar({handleDrawerClose , open , DrawerHeader}) {
                   {
                     minHeight: 48,
                     px: 2.5,
-                    bgcolor : location.pathname === item.path ? "grey" : null
+                    bgcolor : location.pathname === item.path ?theme.palette.mode === "dark" ? grey[900]: grey[300] : null
                   },
                   open
                     ? {
@@ -194,7 +196,7 @@ export default function SideBar({handleDrawerClose , open , DrawerHeader}) {
                   {
                     minHeight: 48,
                     px: 2.5,
-                    bgcolor : location.pathname === item.path ? "grey" : null
+                    bgcolor : location.pathname === item.path ?theme.palette.mode === "dark" ? grey[900]: grey[300] : null
                   },
                   open
                     ? {
@@ -254,7 +256,7 @@ export default function SideBar({handleDrawerClose , open , DrawerHeader}) {
                   {
                     minHeight: 48,
                     px: 2.5,
-                    bgcolor : location.pathname === item.path ? "grey" : null
+                    bgcolor : location.pathname === item.path ? theme.palette.mode === "dark" ? grey[900]: grey[300] : null
                   },
                   open
                     ? {
