@@ -46,7 +46,7 @@ const theme = useTheme()
     <>
     <Typography sx={{color: theme.palette.info.main ,fontSize: 24 , fontWeight:"bold"}}>TEAM</Typography>
     <Typography sx={{pb:2}}>Managing the Team Members</Typography>
-     <div style={{ height: 600, width: '98%', margin: "auto" }}>
+     <div style={{ height: 650, width: '98%', margin: "auto" }}>
       <DataGrid rows={rows} columns={columns} />
     </div>
     </>
