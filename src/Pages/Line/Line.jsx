@@ -1,5 +1,6 @@
 import { Typography, useTheme } from '@mui/material';
 import React from 'react'
+import LineChart from './LineChart';
 
 export default function Line() {
    const theme = useTheme();
@@ -17,6 +18,8 @@ export default function Line() {
       <Typography sx={{ pb: 2 }}>
        Simple Line Chart
       </Typography>
+
+      <LineChart/>
    
     </>
   )
