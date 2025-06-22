@@ -1,5 +1,6 @@
 import { Typography, useTheme } from '@mui/material'
 import React from 'react'
+import GeogarphyChart from './GeogarphyChart';
 
 export default function Geography() {
    const theme = useTheme();
@@ -18,6 +19,8 @@ export default function Geography() {
         Simple Geogarphy Chart
       </Typography>
 
+       <GeogarphyChart/>
+    
     </>
   )
 }
