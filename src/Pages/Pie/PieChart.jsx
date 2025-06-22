@@ -1,48 +1,48 @@
+import { Box, useTheme } from '@mui/material'
 import React from 'react'
-import { ResponsiveBar } from "@nivo/bar";
-import { Box, useTheme } from '@mui/material';
+import { ResponsivePie } from '@nivo/pie'
 
-export default function BarChart() {
-     const theme = useTheme();
-     const data = [
-    {
-        year: 2019 ,
-        Spain: 900,
-        France:1400,
-        Germany: 1700 ,
-    },
-     {
-        year: 2020 ,
-        Spain: 1000,
-        France:1500,
-        Germany: 1800 ,
-    },
-     {
-        year: 2021 ,
-        Spain: 1100,
-        France:1600,
-        Germany: 1900 ,
-    },
-     {
-        year: 2022 ,
-        Spain: 1200,
-        France:1700,
-        Germany: 2000 ,
-    },
-     {
-        year: 2023 ,
-        Spain: 1300,
-        France:1800,
-        Germany: 2100 ,
-    }
+
+export default function PieChart() {
+    const theme = useTheme()
+    const data = [
+  {
+    "id": "stylus",
+    "label": "stylus",
+    "value": 450,
+    "color": "hsl(248, 70%, 50%)"
+  },
+  {
+    "id": "ruby",
+    "label": "ruby",
+    "value": 140,
+    "color": "hsl(94, 70%, 50%)"
+  },
+  {
+    "id": "c",
+    "label": "c",
+    "value": 124,
+    "color": "hsl(114, 70%, 50%)"
+  },
+  {
+    "id": "php",
+    "label": "php",
+    "value": 342,
+    "color": "hsl(73, 70%, 50%)"
+  },
+  {
+    "id": "go",
+    "label": "go",
+    "value": 55,
+    "color": "hsl(146, 70%, 50%)"
+  }
 ]
   return (
     <>
-      
-      <Box height="75vh">
-        <ResponsiveBar
-          data={data}
-          theme={{
+     <Box height={"75vh"}>
+      <ResponsivePie /* or Pie for fixed dimensions */
+        data={data}
+         theme={{
            
             text: {
               fontSize: 11,
@@ -152,39 +152,29 @@ export default function BarChart() {
               tableCellValue: {},
             },
           }}
-          keys={["Spain", "France", "Germany"]}
-          indexBy="year"
-          margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
-          padding={0.3}
-          colors={{ scheme: "paired" }}
-          borderColor={{ from: "color", modifiers: [["darker", 1.6]] }}
-          axisBottom={{ legend: "Year", legendOffset: 40 }}
-          axisLeft={{
-            legend: "Salary (EUR/month)",
-            legendPosition: "middle",
-            legendOffset: -50,
-          }}
-          labelSkipWidth={12}
-          labelSkipHeight={12}
-          labelTextColor={{ from: "color", modifiers: [["darker", 1.6]] }}
-          legends={[
+        margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
+        innerRadius={0.5}
+        padAngle={0.6}
+        cornerRadius={2}
+        activeOuterRadiusOffset={8}
+        arcLinkLabelsSkipAngle={10}
+        arcLinkLabelsTextColor= {theme.palette.text.primary}
+        arcLinkLabelsThickness={2}
+        arcLinkLabelsColor={{ from: 'color' }}
+        arcLabelsSkipAngle={10}
+        arcLabelsTextColor={{ from: 'color', modifiers: [['darker', 2]] }}
+        legends={[
             {
-              dataFrom: "keys",
-              anchor: "bottom-right",
-              direction: "column",
-              justify: false,
-              translateX: 120,
-              itemWidth: 100,
-              itemHeight: 20,
-              itemsSpacing: 2,
-              symbolSize: 20,
-            },
-          ]}
-          animate={true}
-          motionStiffness={90}
-          motionDamping={15}
-        />
-      </Box>
+                anchor: 'bottom',
+                direction: 'row',
+                translateY: 56,
+                itemWidth: 100,
+                itemHeight: 18,
+                symbolShape: 'circle'
+            }
+        ]}
+    />
+     </Box> 
     </>
   )
 }

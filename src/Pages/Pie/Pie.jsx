@@ -1,5 +1,7 @@
 import { Typography, useTheme } from '@mui/material'
 import React from 'react'
+import PieChart from './PieChart';
+
 
 export default function Pie() {
    const theme = useTheme()
@@ -15,6 +17,8 @@ export default function Pie() {
         Pie Chart
       </Typography>
       <Typography sx={{ pb: 2 }}>Simple Pie Chat </Typography>
+
+      <PieChart/>
     </>
   )
 }
