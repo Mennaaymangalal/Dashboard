@@ -690,14 +690,14 @@ const data = [
     "value": 508941
   }
 ]
-export default function GeogarphyChart() {
+export default function GeogarphyChart({isDashboard=false}) {
     const theme = useTheme();
   return (
     <>
-     <Box height={"75vh"} sx={{border: `1px solid ${theme.palette.text.primary}` , borderRadius:"5px" }}>
+     <Box height={isDashboard ? "400px" : "75vh"} sx={{border: isDashboard?  null : `1px solid ${theme.palette.text.primary}` , borderRadius:"5px" }}>
          <ResponsiveChoropleth /* or Choropleth for fixed dimensions */
         data={data}
-        projectionScale={140}
+        projectionScale={isDashboard? 80 : 140}
          theme={{
            
             text: {
@@ -819,7 +819,7 @@ export default function GeogarphyChart() {
         graticuleLineColor="#dddddd"
         borderWidth={0.5}
         borderColor="#152538"
-        legends={[
+        legends={isDashboard? [] : [
             {
                 anchor: 'bottom-left',
                 direction: 'column',

@@ -3,7 +3,7 @@ import React from 'react'
 import { ResponsivePie } from '@nivo/pie'
 
 
-export default function PieChart() {
+export default function PieChart({isDashboard = false}) {
     const theme = useTheme()
     const data = [
   {
@@ -39,7 +39,7 @@ export default function PieChart() {
 ]
   return (
     <>
-     <Box height={"75vh"}>
+     <Box height={isDashboard ? "300px" :"75vh"}>
       <ResponsivePie /* or Pie for fixed dimensions */
         data={data}
          theme={{
@@ -152,8 +152,8 @@ export default function PieChart() {
               tableCellValue: {},
             },
           }}
-        margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
-        innerRadius={0.5}
+        margin={isDashboard? { top: 10, right: 5, bottom: 10, left: 5 } : { top: 40, right: 80, bottom: 80, left: 80 }}
+        innerRadius={isDashboard ? 0.8 : 0.5}
         padAngle={0.6}
         cornerRadius={2}
         activeOuterRadiusOffset={8}
@@ -161,9 +161,11 @@ export default function PieChart() {
         arcLinkLabelsTextColor= {theme.palette.text.primary}
         arcLinkLabelsThickness={2}
         arcLinkLabelsColor={{ from: 'color' }}
+        enableArcLabels={isDashboard? false : true}
         arcLabelsSkipAngle={10}
+        enableArcLinkLabels={isDashboard? false : true}
         arcLabelsTextColor={{ from: 'color', modifiers: [['darker', 2]] }}
-        legends={[
+        legends={isDashboard ? [] : [
             {
                 anchor: 'bottom',
                 direction: 'row',

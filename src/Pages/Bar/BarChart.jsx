@@ -2,7 +2,7 @@ import React from 'react'
 import { ResponsiveBar } from "@nivo/bar";
 import { Box, useTheme } from '@mui/material';
 
-export default function BarChart() {
+export default function BarChart({isDashboard = false}) {
      const theme = useTheme();
      const data = [
     {
@@ -39,7 +39,7 @@ export default function BarChart() {
   return (
     <>
       
-      <Box height="75vh">
+      <Box height={isDashboard? "400px" : "75vh"}>
         <ResponsiveBar
           data={data}
           theme={{
@@ -154,13 +154,14 @@ export default function BarChart() {
           }}
           keys={["Spain", "France", "Germany"]}
           indexBy="year"
+          enableGridY={false}
           margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
           padding={0.3}
           colors={{ scheme: "paired" }}
           borderColor={{ from: "color", modifiers: [["darker", 1.6]] }}
-          axisBottom={{ legend: "Year", legendOffset: 40 }}
+          axisBottom={{ legend: isDashboard? null : "Year", legendOffset: 40 }}
           axisLeft={{
-            legend: "Salary (EUR/month)",
+            legend: isDashboard? null : "Salary (EUR/month)",
             legendPosition: "middle",
             legendOffset: -50,
           }}
