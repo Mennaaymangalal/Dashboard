@@ -22,14 +22,16 @@ const theme = useTheme()
            Welcome to your dashboard
           </Typography>
 
-          <Box>
+          <Box sx={{display:'flex' , flexDirection:'column' , gap: 2}}>
             <Box sx={{textAlign: 'end'}}>
             <Button variant='contained' color='primary' sx={{textTransform:'capitalize' , padding: '6px 8px'}}>
             <DownloadIcon sx={{pr:'5px' }} /> Downloads Reports
             </Button>
             </Box>
           <Row1/>
+          
           <Row2/>
+          
           <Row3/>
           </Box>
     

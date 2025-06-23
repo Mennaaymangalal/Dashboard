@@ -54,7 +54,7 @@ export default function Card({ Icon, text1, text2, Increase, schema }) {
         </Stack>
 
         <Stack alignItems={'center'}>
-          <Box sx={{ height: "80px", width: "80px" }}>
+          <Box sx={{ height: "70px", width: "70px" }}>
             <ResponsivePie /* or Pie for fixed dimensions */
              margin={{ top: 0, right: 0, bottom: 15, left: 0 }}            
               data={data}
