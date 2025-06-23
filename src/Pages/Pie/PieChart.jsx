@@ -39,7 +39,7 @@ export default function PieChart({isDashboard = false}) {
 ]
   return (
     <>
-     <Box height={isDashboard ? "300px" :"75vh"}>
+     <Box height={isDashboard ? "280px" :"75vh"}>
       <ResponsivePie /* or Pie for fixed dimensions */
         data={data}
          theme={{
@@ -153,7 +153,7 @@ export default function PieChart({isDashboard = false}) {
             },
           }}
         margin={isDashboard? { top: 10, right: 5, bottom: 10, left: 5 } : { top: 40, right: 80, bottom: 80, left: 80 }}
-        innerRadius={isDashboard ? 0.8 : 0.5}
+        innerRadius={isDashboard ? 0.7 : 0.5}
         padAngle={0.6}
         cornerRadius={2}
         activeOuterRadiusOffset={8}
