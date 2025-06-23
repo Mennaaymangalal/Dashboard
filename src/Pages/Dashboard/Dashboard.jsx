@@ -1,23 +1,37 @@
-import { Typography } from '@mui/material'
+import { Box, Button, Stack, Typography, useTheme } from '@mui/material'
+import Row1 from './Row1'
+import Row2 from './Row2'
+import Row3 from './Row3'
+import DownloadIcon from '@mui/icons-material/Download';
 
 
 export default function Dashboard() {
+const theme = useTheme()
   return (
     <>
-      <Typography sx={{ marginBottom: 2 }}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
-          enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus
-          imperdiet. Semper risus in hendrerit gravida rutrum quisque non tellus.
-          Convallis convallis tellus id interdum velit laoreet id donec ultrices.
-          Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
-          adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra
-          nibh cras. Metus vulputate eu scelerisque felis imperdiet proin fermentum
-          leo. Mauris commodo quis imperdiet massa tincidunt. Cras tincidunt lobortis
-          feugiat vivamus at augue. At augue eget arcu dictum varius duis at
-          consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa
-          sapien faucibus et molestie ac.
-        </Typography>
+          <Typography
+            sx={{
+              color: theme.palette.info.main,
+              fontSize: 24,
+              fontWeight: "bold",
+            }}
+          >
+           Dashboard
+          </Typography>
+          <Typography sx={{ pb: 2 }}>
+           Welcome to your dashboard
+          </Typography>
+
+          <Box>
+            <Box sx={{textAlign: 'end'}}>
+            <Button variant='contained' color='primary' sx={{textTransform:'capitalize' , padding: '6px 8px'}}>
+            <DownloadIcon sx={{pr:'5px' }} /> Downloads Reports
+            </Button>
+            </Box>
+          <Row1/>
+          <Row2/>
+          <Row3/>
+          </Box>
     
     </>
   )
