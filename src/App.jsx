@@ -13,6 +13,7 @@ import Bar from './Pages/Bar/Bar';
 import Pie from './Pages/Pie/Pie';
 import Line from './Pages/Line/Line';
 import Geography from './Pages/Geography/Geography';
+import NotFound from './Pages/NotFound/NotFound';
 
 
 const theme = createTheme({
@@ -35,6 +36,7 @@ function App() {
       {path: "pie" , element:<Pie/>},
       {path: "line" , element:<Line/>},
       {path: "geography" , element:<Geography/>},
+      {path: "*" , element:<NotFound/>},
     ]}
   ])
 
